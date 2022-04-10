@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Result</title>
+{% endblock %}
+
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{%if messages %}
+  {% for category, msg in messages%}
+      <div class="alert alert-{{category}}">
+        <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{msg}}
+        </div>
+  {% endfor %}
+{% endif %}
+{% endwith  %}
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+
+    
+
+        <div
+        class="bg-image"
+        style="
+            background-image: url('https://htxt.co.za/wp-content/uploads/2020/07/twitter-logo-collage.jpg');
+            
+        "
+        >
+        <br>
+
+        <div class="col-md-11 mx-auto my-1">
+            <h1 class="display-5 font-weight-bold" style="color:black;"><em><strong><small>"{{session['tweet']}}"</small></strong></em></h1>
+        </div>
+
+        <div class="col-md-5  mx-auto my-1">
+
+
+            <h5 class="display-2 font-weight-bold" style="color:black;">
+                Your Tweet is 
+            </h5>
+            <h1 class="display-5 font-weight-bold" style="color:{{session['sentiment_color']}};">
+                {{session['sentiment']}}
+            </h1>          
+    
+            <div class="row">
+                <div class="col">
+                    <form class="form-register" style="color: antiquewhite" method="post">
+                        <input class="form-control form-control-lg" placeholder="Try Again" name="tweet"/>
+                        <br>
+    
+                        <input type="submit" name="submit" value="submit" class="btn btn-outline btn-primary">
+                    </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
