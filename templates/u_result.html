@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Query User</title>
+{% endblock %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages(with_categories=true) %}
+{%if messages %}
+  {% for category, msg in messages%}
+      <div class="alert alert-{{category}}">
+        <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        {{msg}}
+        </div>
+  {% endfor %}
+{% endif %}
+{% endwith  %}
+
+
+<div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+    <h5 class="display-2 font-weight-bold" style="color:rgb(255, 255, 255);">
+        @{{session['user']}}
+    </h5>
+    <h1 class="display-5 font-weight-bold" style="color:{{session['sentiment_color']}}">
+        is a {{session['sentiment']}} user 
+    </h1>
+
+    <table class="table table-dark">
+        <thead class="table table-bordered table-dark">
+          <tr>
+            <!-- Your Columns HERE -->
+            <th scope="col" class="text-left">Tweets</th>
+            <th scope="col" class="text-left">Sentiment</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for data in results %}
+            {%if data[1] == "Joy" %}
+                <tr class="bg-success" align="left">
+                    <td class="bg-success">{{ data[0] }}</td>
+                    <td class="bg-success">{{ data[1] }}</td>
+                </tr>    
+            {% elif data[1] == "Anger" %}
+                <tr class="bg-danger" align="left">
+                    <td class="bg-danger">{{ data[0] }}</td>
+                    <td class="bg-danger">{{ data[1] }}</td>
+                </tr>
+            {% elif data[1] == "Sadness" %}
+                <tr class="bg-primary" align="left">
+                    <td class="bg-primary">{{ data[0] }}</td>
+                    <td class="bg-primary">{{ data[1] }}</td>
+                </tr>
+            {% elif data[1] == "Fear" %}
+            <tr class="bg-info" align="left">
+                <td class="bg-info" >{{ data[0] }}</td>
+                <td class="bg-info" >{{ data[1] }}</td>
+            </tr>
+        {% endif %}               
+          {% endfor %}
+        </tbody>
+      </table>
+</div>
+
+
+{% endblock %}

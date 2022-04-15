@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {%if messages %}
+      {% for category, msg in messages%}
+          <div class="alert alert-{{category}}">
+            <button type="button" class="m1-2 mb-1 close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {{msg}}
+            </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith  %}
+
+    <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
+        <div
+            class="bg-image"
+            style="
+                background-image: url('https://htxt.co.za/wp-content/uploads/2020/07/twitter-logo-collage.jpg');
+            "
+        >
+        <div class="col-md-5 p-lg-5 mx-auto my-1">
+            <h1 class="display-3 font-weight-bold" style="color:black;">Twitter Sentiment Analysis</h1>
+
+            <div class="row">
+                <div class="col">
+                    <form class="form-register" style="color: antiquewhite" method="post">
+                        <input class="form-control form-control-lg" placeholder="User link" name="user"/>
+                        <br>
+
+                        <input type="submit" name="submit" value="submit" class="btn btn-outline btn-primary">
+                    </form>
+            </div>
+        </div>
+    </div>
+
+    
+
+
+
+ 
+{% endblock %}
