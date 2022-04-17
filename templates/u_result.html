@@ -38,25 +38,25 @@
         </thead>
         <tbody>
           {% for data in results %}
-            {%if data[1] == "Joy" %}
+            {%if data[1] == "Positive" %}
                 <tr class="bg-success" align="left">
                     <td class="bg-success">{{ data[0] }}</td>
                     <td class="bg-success">{{ data[1] }}</td>
                 </tr>    
-            {% elif data[1] == "Anger" %}
+            {% elif data[1] == "Negative" %}
                 <tr class="bg-danger" align="left">
                     <td class="bg-danger">{{ data[0] }}</td>
                     <td class="bg-danger">{{ data[1] }}</td>
                 </tr>
-            {% elif data[1] == "Sadness" %}
+            {% elif data[1] == "Neutral" %}
                 <tr class="bg-primary" align="left">
                     <td class="bg-primary">{{ data[0] }}</td>
                     <td class="bg-primary">{{ data[1] }}</td>
                 </tr>
-            {% elif data[1] == "Fear" %}
-            <tr class="bg-info" align="left">
-                <td class="bg-info" >{{ data[0] }}</td>
-                <td class="bg-info" >{{ data[1] }}</td>
+            {% else %}
+            <tr align="left">
+                <td>{{ data[0] }}</td>
+                <td>{{ data[1] }}</td>
             </tr>
         {% endif %}               
           {% endfor %}

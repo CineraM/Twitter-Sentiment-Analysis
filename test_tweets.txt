@@ -1,0 +1,21 @@
+single tweet
+
+negative:
+    https://twitter.com/___Madiiii/status/1515420985037664258
+
+positive:
+    https://twitter.com/Build_FamilyFC/status/1515577810659811333
+
+neutral:
+    https://twitter.com/elonmusk/status/1514698036760530945
+
+
+
+user tests
+
+positive
+    barackobama
+
+neutral --> didnt train with emojis
+    taylorswift13
+
