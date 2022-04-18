@@ -2,10 +2,7 @@
 Members: Devin Parmet, , Matias Cinera
 
 ## Application Dependencies
-     pip install mysql-connector
-     pip install mysql-connector-python
-     pip install mysql-connector-python-rf
-     pip install pymysql
-     pip install cryptography
+     pip install snscrape
+     pip install numpy
      pip install Flask
-     pip install Flask-SQLAlchemy
+     pip install tensorflow
