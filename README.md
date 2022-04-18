@@ -14,10 +14,11 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
      python deep.py
      python app.py
      
-.
+```
 ├── ...
 ├── test                    # Test files (alternatively `spec` or `tests`)
 │   ├── benchmarks          # Load and stress tests
 │   ├── integration         # End-to-end, integration tests (alternatively `e2e`)
 │   └── unit                # Unit tests
-└── ..
+└── 
+```
