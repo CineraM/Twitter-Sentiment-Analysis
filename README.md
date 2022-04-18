@@ -38,8 +38,10 @@ rning technique and is more commonly known as sentiment analysis.
 ![app1](https://user-images.githubusercontent.com/64340009/163760780-a7a8f068-3111-4ea2-8950-c55324c82dfb.png)  
 
 
+<p align="center">
+  <img width="460" height="300" src=![app2](https://user-images.githubusercontent.com/64340009/163760746-b7bbab87-ca08-44ce-94d2-b4640a0901b8.png)  >
+</p>
 
-![app2](https://user-images.githubusercontent.com/64340009/163760746-b7bbab87-ca08-44ce-94d2-b4640a0901b8.png)  
 
 
 
