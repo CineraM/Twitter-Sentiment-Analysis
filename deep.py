@@ -83,7 +83,7 @@ history = model.fit(x=x_train, y=y_train, epochs=100,
 individual testing
 """
 string = str.encode(
-    "im smiling and singing all day")
+    "how the fuck am I supposed to finish this work today")
 test = [string]
 
 yfit = model(tf.constant(test))
