@@ -8,7 +8,7 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
      pip install Flask
      pip install tensorflow
 
-#### Application Structure
+### Application Structure
 ```
 ├── ...
 ├── model.tf             # Trained network saved on disk
@@ -26,22 +26,19 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
 └── 
 ```
 
-#### Optional: Train the Neural Network by compiling "deep.py"
-#### Compile the Flask application "app.py"
+### Optional: Train the Neural Network by compiling "deep.py"
+### Compile the Flask application "app.py"
      python deep.py
      python app.py
 
 In our project, we aimed to evaluate text data by generating a model that can determine the emotion portrayed by the text in question. This is a popular machine lea!
 rning technique and is more commonly known as sentiment analysis.  
 
-
+## Application 
 ![app1](https://user-images.githubusercontent.com/64340009/163760780-a7a8f068-3111-4ea2-8950-c55324c82dfb.png)  
 
 
-<p align="center">
-  <img width="460" height="300" src=![app2](https://user-images.githubusercontent.com/64340009/163760746-b7bbab87-ca08-44ce-94d2-b4640a0901b8.png)  >
-</p>
 
-
+![app2](https://user-images.githubusercontent.com/64340009/163760746-b7bbab87-ca08-44ce-94d2-b4640a0901b8.png)  
 
 
