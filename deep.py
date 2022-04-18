@@ -6,27 +6,9 @@ import matplotlib.pyplot as plt
 from keras.models import load_model
 
 
-def getDataset(datasetFile):
-    for line in datasetFile.skip(1):
-        split_line = tf.strings.split(line, ",", maxsplit=2)
-        review = split_line[2]
-
-        print(review)
-        print(split_line)
-        # tokenized_text = tokenizer.tokenize(review.numpy().lower())
-
-        # for word in tokenized_text:
-        #     if word not in frequencies:
-        #         frequencies[word] = 1
-        #     else:
-        #         frequencies[word] += 1
-
-        #     # if we've reached the threshold
-        #     if frequencies[word] == threshold:
-        #         vocabulary.update(tokenized_text)
-
-
 def getLabel(label):
+    # numerical mapping of the labels
+
     if label == str.encode("joy"):
         return 0
     elif label == str.encode("sadness"):
@@ -42,10 +24,6 @@ Load Data
 """
 train_dataset = tf.data.TextLineDataset("emotions_train.csv").skip(1)
 test_dataset = tf.data.TextLineDataset("emotions_test.csv").skip(1)
-
-"""
-Put data in arrays
-"""
 
 x_train = []
 y_train = []
@@ -75,20 +53,20 @@ y_test = np.asarray(y_test)
 print(x_test[0])
 print(y_test[0])
 
+"""
+Manipulate Data
+"""
+# Convert strings to arrays of numbers
 max_words = 1000
-#max_len = 100
 vectorize_layer = tf.keras.layers.TextVectorization(
-    max_tokens=max_words)  # , output_sequence_length=max_len)
+    max_tokens=max_words)
 
 vectorize_layer.adapt(x_train)
 
-vocab = np.array(vectorize_layer.get_vocabulary())
-# print(vocab[:100])
 
-# print(x_train[:2])
-vectorized = vectorize_layer(x_train[:2]).numpy()
-# print(vectorized)
-
+"""
+Deep learning
+"""
 model = tf.keras.Sequential([
     vectorize_layer,
     tf.keras.layers.Embedding(
@@ -104,14 +82,13 @@ model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(),
 history = model.fit(x=x_train, y=y_train, epochs=100,
                     batch_size=64, validation_data=(x_test, y_test))
 
-# model.save("my_model.tf")
 
-# model = load_model("my_model.tf")
-
+"""
+individual testing
+"""
 string = str.encode(
-    "I swear to god if I dont win next game i will blow this place up")
+    "im smiling and singing all day")
 test = [string]
-# vectorize_layer.adapt(test)
 
 yfit = model(tf.constant(test))
 yfit = yfit.numpy().argmax(axis=1)
