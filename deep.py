@@ -1,6 +1,10 @@
 import tensorflow as tf
 import numpy as np
 
+"""
+Functions
+"""
+
 
 def getLabel(label):
     # numerical mapping of the labels
@@ -13,6 +17,14 @@ def getLabel(label):
         return 2
     elif label == str.encode("anger"):
         return 3
+
+
+def save_model(model, filename):
+    model.save(filename)
+
+
+def load_model(filename):
+    return tf.keras.models.load_model(filename)
 
 
 """
@@ -75,8 +87,12 @@ model = tf.keras.Sequential([
 model.compile(loss=tf.keras.losses.SparseCategoricalCrossentropy(),
               optimizer=tf.keras.optimizers.Adam(1e-4), metrics=['accuracy'])
 
-history = model.fit(x=x_train, y=y_train, epochs=100,
-                    batch_size=64, validation_data=(x_test, y_test))
+model.fit(x=x_train, y=y_train, epochs=100,
+          batch_size=64, validation_data=(x_test, y_test))
+
+MODEL_NAME = "model.tf"
+
+save_model(model, MODEL_NAME)
 
 
 """
