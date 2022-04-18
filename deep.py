@@ -5,7 +5,6 @@ import numpy as np
 Functions
 """
 
-
 def getLabel(label):
     # numerical mapping of the labels
 
@@ -93,16 +92,3 @@ model.fit(x=x_train, y=y_train, epochs=100,
 MODEL_NAME = "model.tf"
 
 save_model(model, MODEL_NAME)
-
-
-"""
-individual testing
-"""
-string = str.encode(
-    "how the fuck am I supposed to finish this work today")
-test = [string]
-
-yfit = model(tf.constant(test))
-yfit = yfit.numpy().argmax(axis=1)
-
-print(yfit)

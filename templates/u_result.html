@@ -22,11 +22,14 @@
 
 <div class="position-relative overflow-hidden p-3 p-md-5 m-md-3 text-center bg-dark" style="color:white">
     <h5 class="display-2 font-weight-bold" style="color:rgb(255, 255, 255);">
-        @{{session['user']}}
+        @{{session['user']}}'s
     </h5>
-    <h1 class="display-5 font-weight-bold" style="color:{{session['sentiment_color']}}">
-        is a {{session['sentiment']}} user 
+    <h1 class="display-5 font-weight-bold" >
+        <span style="color:yellow">Average sentiment: </span> 
+        <span style="color:{{session['sentiment_color']}}">{{session['sentiment']}}</span>  
+        
     </h1>
+    
 
     <table class="table table-dark">
         <thead class="table table-bordered table-dark">
@@ -38,25 +41,25 @@
         </thead>
         <tbody>
           {% for data in results %}
-            {%if data[1] == "Positive" %}
+            {%if data[1] == "Joy" %}
                 <tr class="bg-success" align="left">
                     <td class="bg-success">{{ data[0] }}</td>
                     <td class="bg-success">{{ data[1] }}</td>
                 </tr>    
-            {% elif data[1] == "Negative" %}
-                <tr class="bg-danger" align="left">
-                    <td class="bg-danger">{{ data[0] }}</td>
-                    <td class="bg-danger">{{ data[1] }}</td>
-                </tr>
-            {% elif data[1] == "Neutral" %}
+            {% elif data[1] == "Sadness" %}
                 <tr class="bg-primary" align="left">
                     <td class="bg-primary">{{ data[0] }}</td>
                     <td class="bg-primary">{{ data[1] }}</td>
                 </tr>
-            {% else %}
-            <tr align="left">
-                <td>{{ data[0] }}</td>
-                <td>{{ data[1] }}</td>
+            {% elif data[1] == "Fear" %}
+                <tr class="table-active" align="left">
+                    <td class="table-active">{{ data[0] }}</td>
+                    <td class="table-active">{{ data[1] }}</td>
+                </tr>
+            {% elif data[1] == "Anger" %}
+            <tr class="bg-danger"align="left">
+                <td class="bg-danger">{{ data[0] }}</td>
+                <td class="bg-danger">{{ data[1] }}</td>
             </tr>
         {% endif %}               
           {% endfor %}

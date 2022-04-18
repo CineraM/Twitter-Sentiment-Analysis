@@ -1,4 +1,3 @@
-# https://www.youtube.com/watch?v=jtIMnmbnOFo <-- thank go
 import snscrape.modules.twitter as sntwitter
 import re
 
@@ -33,25 +32,19 @@ def query_tweet(url):
     # some tweets have a https link at the end (when replying to a tweet), remove all https links
     tweet = remove_url(tweet)
     
-            
-
     return tweet
 
-# testing
-#print(query_tweet("https://twitter.com/WHO/status/1511827080043978756"))
-#print(query_tweet("https://twitter.com/elonmusk/status/1514681422212128770?cxt=HHwWhICz7c6unYUqAAAA"))
-
-
 def query_user(user):    
-    query = f'(from:{user} exclude:replies)'
+    query = f'(from:{user} exclude:replies)'    # query the user
     tweets = []
-    limit = 20
+    limit = 30  # tweets limit
     for tweet in sntwitter.TwitterSearchScraper(query).get_items():
         if len(tweets) == limit:
             break
         else:
-            tweets.append(str([tweet.content]))
-
+            tweets.append(str([tweet.content])) # only append the content of the tweet
+    
+    # The API appends the tweets inside brakets [], remove those brakets
     for i in range(len(tweets)):
         tweets[i] = remove_url(tweets[i])
         tweets[i] = tweets[i].replace("[","")
