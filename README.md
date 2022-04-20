@@ -19,7 +19,7 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
 │   ├── u_home.html      # user tweets home  
 │   └── u_home.html      # user tweets results 
 ├── app.py               # flask application & load NN
-├── LSTM.ipynb              # Train and save NN
+├── SRNN.ipynb              # Train and save NN
 ├── getTweets.py         # Trained network saved on disk
 ├── emotions_train.csv   # Trainning data for NN
 ├── emotions_test.csv    # Testing data for NN
