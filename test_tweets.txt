@@ -1,19 +1,23 @@
 single tweet
 
 Joy:
-    https://twitter.com/___Madiiii/status/1515420985037664258
-
-Sadness:
     https://twitter.com/Build_FamilyFC/status/1515577810659811333
 
+Sadness:
+    https://twitter.com/Ryan_Ken_Acts/status/1516459553151410184
+
 Fear:
-    https://twitter.com/elonmusk/status/1514698036760530945
+    https://twitter.com/isitdeadoralive/status/1516582624818601989
 
 Anger:
-    https://twitter.com/PFleeceman/status/1515147834869395461
+    https://twitter.com/elonmusk/status/1514698036760530945
 
+
+Wrong Prediction:
+    https://twitter.com/BillGates/status/1516094679061700622
 
 users tests
 
 Anger: katyperry
 Sadness: BillGates
+joy: Sermanson_2002
