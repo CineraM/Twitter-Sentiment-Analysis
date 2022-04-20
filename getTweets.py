@@ -51,6 +51,3 @@ def query_user(user):
         tweets[i] = tweets[i].replace("]","")
 
     return tweets
-
-
-
