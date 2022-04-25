@@ -11,6 +11,7 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
 ### Application Structure
 ```
 ├── ...
+├── AI Final Presentation.pdf     # Presentation PDF
 ├── model.tf             # Trained network saved on disk
 ├── Templates            # Trained network saved on disk
 │   ├── base.html        # base html          
@@ -21,8 +22,11 @@ Members: Nathaniel Aldino, Daniel Arvelo, Raymond Gillies, Matias Cinera, Devin 
 ├── app.py               # flask application & load NN
 ├── SRNN.ipynb           # Train and save NN
 ├── getTweets.py         # Trained network saved on disk
+├── accuracy_Test.py     # Py file to test accuracy of the NN
+├── create_dataset.py     # Creates the subset of the dataset for our project
 ├── emotions_train.csv   # Trainning data for NN
 ├── emotions_test.csv    # Testing data for NN
+├── emotions_test_small.csv    # smaller testing data for NN
 └── 
 ```
 
